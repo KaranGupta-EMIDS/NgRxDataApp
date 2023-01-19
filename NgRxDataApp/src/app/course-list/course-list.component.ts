@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-standalone-child',
+  selector: 'app-course-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './standalone-child.component.html',
-  styleUrls: ['./standalone-child.component.css'],
+  templateUrl: './course-list.component.html',
+  styleUrls: ['./course-list.component.css'],
 })
-export class StandaloneChildComponent implements OnInit {
+export class CourseListComponent implements OnInit {
   ngOnInit(): void {
     console.log('standalone child component created');
   }

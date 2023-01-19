@@ -1,0 +1,63 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add courses</h3>
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="courseForm" class="form-horizontal">
+      <div class="form-group">
+        <label for="courseName" class="col-sm-2 control-label"
+          >Course name</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="courseName"
+            formControlName="name"
+            placeholder="Course name"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Course duration" class="col-sm-2 control-label"
+          >Course duration</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="duration"
+            formControlName="duration"
+            placeholder="Course duration"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Course duration" class="col-sm-2 control-label"
+          >Course fee</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="fee"
+            formControlName="fee"
+            placeholder="Course fee"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-info">
+            Save
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+          <button class="btn btn-info margin-left-20p">
+            Cancel
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
