@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Course } from '../../classes/course';
 
 @Component({
   selector: 'app-course-list',
@@ -9,7 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./course-list.component.css'],
 })
 export class CourseListComponent implements OnInit {
-  ngOnInit(): void {
-    console.log('standalone child component created');
-  }
+  courses: Course[] = [];
+
+  ngOnInit(): void {}
+
+  private storeSubscription() {}
+
+  removeCourse(courseId: number | null) {}
+  editCourse(courseId: number | null) {}
 }
