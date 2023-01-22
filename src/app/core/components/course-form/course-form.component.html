@@ -1,0 +1,98 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add courses</h3>
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="courseForm" class="form-horizontal">
+      <div class="form-group">
+        <label for="courseName" class="col-sm-2 control-label"
+          >Course name</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="courseName"
+            formControlName="name"
+            placeholder="Course name"
+            maxlength="10"
+          />
+          <!-- <span class="text-danger" *ngIf="courseForm?.errors"
+            ><h5 class="margin-0">
+              <small>Unexpected length of name.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course name is required</small>
+            </h5></span
+          > -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Course duration" class="col-sm-2 control-label"
+          >Course duration</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="duration"
+            formControlName="duration"
+            placeholder="Course duration"
+          />
+          <!-- <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course duration is required.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course duration cannot be more than 12.</small>
+            </h5></span
+          > -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Course fee" class="col-sm-2 control-label"
+          >Course fee</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="fee"
+            formControlName="fee"
+            placeholder="Course fee"
+          />
+          <!-- <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course fee cannot be more than 999.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course fee is required.</small>
+            </h5></span
+          > -->
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button
+            class="btn btn-info"
+            (click)="saveCourse()"
+            [disabled]="courseForm.invalid"
+          >
+            {{ buttonLabel }}
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+          <button class="btn btn-info margin-left-20p" (click)="resetForm()">
+            Cancel
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

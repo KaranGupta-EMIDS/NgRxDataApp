@@ -1,0 +1,21 @@
+<ng-container *ngIf="courses?.length">
+  <table class="table table-bordered">
+    <thead>
+      <th>Course name</th>
+      <th>Course duration</th>
+      <th>Action</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <td>{{ course?.name }}</td>
+        <td>{{ course?.duration }}</td>
+        <td>
+          Delete<i class="btn btn-danger" (click)="removeCourse(course.id)"></i>
+          Edit
+          <i class="btn btn-info" (click)="editCourse(course.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
