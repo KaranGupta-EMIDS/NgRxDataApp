@@ -16,7 +16,7 @@ import {
 })
 export class CourseFormComponent implements OnInit {
   readonly SAVE_LABEL = 'Save';
-  readonly UPDATE_LABEL = 'Save';
+  readonly UPDATE_LABEL = 'Update';
   courseForm!: FormGroup;
   buttonLabel: string = this.SAVE_LABEL;
 

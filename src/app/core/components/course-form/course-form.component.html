@@ -15,7 +15,18 @@
             id="courseName"
             formControlName="name"
             placeholder="Course name"
+            maxlength="10"
           />
+          <!-- <span class="text-danger" *ngIf="courseForm?.errors"
+            ><h5 class="margin-0">
+              <small>Unexpected length of name.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course name is required</small>
+            </h5></span
+          > -->
         </div>
       </div>
       <div class="form-group">
@@ -30,6 +41,16 @@
             formControlName="duration"
             placeholder="Course duration"
           />
+          <!-- <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course duration is required.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course duration cannot be more than 12.</small>
+            </h5></span
+          > -->
         </div>
       </div>
       <div class="form-group">
@@ -44,6 +65,16 @@
             formControlName="fee"
             placeholder="Course fee"
           />
+          <!-- <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course fee cannot be more than 999.</small>
+            </h5></span
+          >
+          <span class="text-danger"
+            ><h5 class="margin-0">
+              <small>Course fee is required.</small>
+            </h5></span
+          > -->
         </div>
       </div>
       <div class="form-group">
@@ -53,7 +84,7 @@
             (click)="saveCourse()"
             [disabled]="courseForm.invalid"
           >
-            Save
+            {{ buttonLabel }}
             <span class="glyphicon glyphicon-ok"></span>
           </button>
           <button class="btn btn-info margin-left-20p" (click)="resetForm()">
