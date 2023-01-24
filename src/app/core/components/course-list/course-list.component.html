@@ -1,4 +1,4 @@
-<ng-container *ngIf="courses?.length">
+<ng-container *ngIf="courses$ | async; let courses">
   <table class="table table-bordered">
     <thead>
       <th>Course name</th>

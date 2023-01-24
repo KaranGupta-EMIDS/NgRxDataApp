@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Course } from '../../classes/course';
+import { Course } from '../../model/course.model';
+import { CourseService } from '../../services/course.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-course-list',
@@ -10,12 +12,14 @@ import { Course } from '../../classes/course';
   styleUrls: ['./course-list.component.css'],
 })
 export class CourseListComponent implements OnInit {
-  courses: Course[] = [];
+  courses$: Observable<Course[]> | undefined;
 
-  ngOnInit(): void {}
+  constructor(private courseService: CourseService) {}
 
-  private storeSubscription() {}
+  ngOnInit(): void {
+    this.courses$ = this.courseService.getAll();
+  }
 
-  removeCourse(courseId: number | null) {}
-  editCourse(courseId: number | null) {}
+  removeCourse(courseId: string | null) {}
+  editCourse(courseId: string | null) {}
 }

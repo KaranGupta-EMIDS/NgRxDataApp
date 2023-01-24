@@ -6,6 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Course } from '../../model/course.model';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-course-form',
@@ -19,8 +22,10 @@ export class CourseFormComponent implements OnInit {
   readonly UPDATE_LABEL = 'Update';
   courseForm!: FormGroup;
   buttonLabel: string = this.SAVE_LABEL;
+  private isLoading = false;
+  courses$!: Observable<Course[]>;
 
-  constructor() {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -48,5 +53,10 @@ export class CourseFormComponent implements OnInit {
     this.courseForm.reset();
   }
 
-  saveCourse() {}
+  saveCourse() {
+    if (this.isLoading) {
+      return;
+    }
+    this.courseService.add(new Course(this.courseForm.value));
+  }
 }
